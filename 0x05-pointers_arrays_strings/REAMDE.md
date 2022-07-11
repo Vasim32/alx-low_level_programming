@@ -1,0 +1,1 @@
+this is a project testing my array, string and pointer ewqet
