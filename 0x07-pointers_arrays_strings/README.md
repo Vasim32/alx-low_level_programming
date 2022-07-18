@@ -1,0 +1,1 @@
+this is an other other pointer and array assignment project for alx students.
