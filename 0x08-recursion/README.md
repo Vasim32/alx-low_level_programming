@@ -1,0 +1,2 @@
+This is not the easiest thing to understand. But i have managed wrapped my head around the concept of recurssion. which
+means i am actually smart(constant search for validation. just like in recursion/deep/). DONE.peeeeeeee
