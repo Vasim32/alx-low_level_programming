@@ -1,16 +1,14 @@
-; hello-DOS.asm - single-segment, 16-bit "hello world" program
-;
-; assemble with "nasm -f bin -o hi.com hello-DOS.asm"
+global    _start
 
-    org  0x100        ; .com files always start 256 bytes into the segment
+	          section   .text
+_start:	   mov       rax, 1	; system call for write
+	          mov       rdi, 1 ; file handle 1 is stdout
+	          mov       rsi, message ; address of string to output
+	          mov       rdx, 17	 ; number of bytes
+	          syscall		 ; invoke operating system to do the write
+	          mov       rax, 60	 ; system call for exit
+	          xor       rdi, rdi	 ; exit code 0
+	          syscall		 ; invoke operating system to exit
 
-    ; int 21h is going to want...
-
-    mov  dx, msg      ; the address of or message in dx
-    mov  ah, 9        ; ah=9 - "print string" sub-function
-    int  0x21         ; call dos services
-
-    mov  ah, 0x4c     ; "terminate program" sub-function
-    int  0x21         ; call dos services
-
-    msg  db 'Hello, Holberton', 0x0d, 0x0a, '$'   ; $-terminated message
+	          section   .data
+message:	  db        "Hello, Holberton", 10 ; note the newline at the end
