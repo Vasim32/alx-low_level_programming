@@ -1,1 +1,0 @@
-This is a project about how we can manipulate memory at bit level. CRAYY CRAYY
